@@ -17,24 +17,25 @@ navBtn.addEventListener('click', function () {
 });
 
 //карта
-
-ymaps.ready(function () {
-  var myMap = new ymaps.Map('map', {
-      center: [59.9387, 30.3236],
-      zoom: 16
-    }, {
-      searchControlProvider: 'yandex#search'
-    }),
-    myPlacemark = new ymaps.Placemark([59.938600, 30.322629], {
-      hintContent: 'Pink',
-      balloonContent: 'Pink'
-    }, {
-      iconLayout: 'default#image',
-      iconImageHref: '../img/icon-map-marker.svg',
-      iconImageSize: [36, 46]
-    });
-  myMap.geoObjects.add(myPlacemark);
-});
+if (typeof ymaps !== 'undefined') {
+  ymaps.ready(function () {
+    var myMap = new ymaps.Map('map', {
+        center: [59.9387, 30.3236],
+        zoom: 16
+      }, {
+        searchControlProvider: 'yandex#search'
+      }),
+      myPlacemark = new ymaps.Placemark([59.938600, 30.322629], {
+        hintContent: 'Pink',
+        balloonContent: 'Pink'
+      }, {
+        iconLayout: 'default#image',
+        iconImageHref: '../img/icon-map-marker.svg',
+        iconImageSize: [36, 46]
+      });
+    myMap.geoObjects.add(myPlacemark);
+  });
+}
 
 //валидатор формы
 
@@ -49,21 +50,27 @@ var telephone = document.querySelector('#telephone');
 var email = document.querySelector('#email');
 var message = document.querySelector('#story');
 
-contestRequest.addEventListener('submit', function (event) {
-  if (!lastname.value || !firstname.value || !telephone.value || !email.value || !message.value) {
+if (contestRequest) {
+  contestRequest.addEventListener('submit', function (event) {
+    if (!lastname.value || !firstname.value || !telephone.value || !email.value || !message.value) {
+      event.preventDefault();
+      popupFailure.classList.add('popup__message--on');
+    } else {
+      popupSuccess.classList.add('popup__message--on');
+    }
+  });
+}
+
+if (closeFailure) {
+  closeFailure.addEventListener('click', function (event) {
     event.preventDefault();
-    popupFailure.classList.add('popup__message--on');
-  } else {
-    popupSuccess.classList.add('popup__message--on');
-  }
-});
+    popupFailure.classList.remove('popup__message--on');
+  });
+}
 
-closeFailure.addEventListener('click', function (event) {
-  event.preventDefault();
-  popupFailure.classList.remove('popup__message--on');
-});
-
-closeSuccess.addEventListener('click', function (event) {
-  event.preventDefault();
-  popupSuccess.classList.remove('popup__message--on');
-});
+if (closeSuccess) {
+  closeSuccess.addEventListener('click', function (event) {
+    event.preventDefault();
+    popupSuccess.classList.remove('popup__message--on');
+  });
+}
