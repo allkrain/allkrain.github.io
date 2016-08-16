@@ -1,36 +1,53 @@
 body {
 	font: 16px/18px Arial, sans-serif;
-	color: blueviolet;
-	background-color: peachpuff;
+	color: white;
+	background-color: #283645;
 }
 
 ul {
 	margin: 0;
 	padding: 0;
+    font-size: 0;
 	list-style: none;
 }
 
-main {
-	margin: 0 auto;
-	min-width: 900px;
-	max-width: 1200px;
+.projects {
+    min-width: 700px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.portfolio h1{
+.projects h1 {
 	text-align: center;
 	font-size: 24px;
 	line-height: 28px;
+    text-transform: uppercase;
+    color: #D22856;
 }
 
-.portfolio li{
-	display: inline-block;
-	vertical-align: top;
-}
-
-.portfolio img {
+.projects img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    border: 3px solid white;
 	border-radius: 20px;
 }
 
-.portfolio a:hover {
-	opacity: 0.5;
+a:hover img{
+	border-color: #D22856;
 }
+
+.projects__item {
+	display: inline-block;
+    margin: 0 2%;
+    width: 22%;
+    font-size: 16px;
+    text-align: center;
+	vertical-align: top;
+}
+
+.projects__type {
+    display: block;
+    margin-bottom: 10px;
+}
+

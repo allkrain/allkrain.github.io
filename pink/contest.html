@@ -20,7 +20,7 @@
           <div class="main-menu__item main-menu__item--header">
             <div class="main-menu__wrapper-header">
               <a class="logo logo--header" href="index.html">
-                <svg class="logo__image logo__image--header">
+                <svg class="logo__image logo__image--header" width="146" height="40">
                   <use width="146" height="40" xlink:href="#logo-pink-white"></use>
                 </svg>
                 Pink
@@ -52,11 +52,11 @@
           Поделитесь своей историей и получите шанс выиграть ценный приз — 1000 миль на вашу бонусную карту! <span class="contest-request__please">Пожалуйста заполните форму ниже:</span>
         </p>
         <div class="contest-request__fullname">
-          <label class="contest-request__label contest-request__label--text" for="lastname"><span>Фамилия:</span>
+          <label class="contest-request__label contest-request__label--text" for="lastname"><span class="contest-request__label-name">Фамилия:</span>
           <input class="contest-request__text-field" id="lastname" type="text" name="lastname" placeholder="Укажите фамилию" required></label>
-          <label class="contest-request__label contest-request__label--text" for="name"><span>Имя:</span>
+          <label class="contest-request__label contest-request__label--text" for="name"><span class="contest-request__label-name">Имя:</span>
           <input class="contest-request__text-field" id="name" type="text" name="name" placeholder="Введите ваше имя" required></label>
-          <label class="contest-request__label contest-request__label--text" for="middlename"><span>Отчество:</span>
+          <label class="contest-request__label contest-request__label--text" for="middlename"><span class="contest-request__label-name">Отчество:</span>
           <input class="contest-request__text-field" id="middlename" type="text" name="middlename" placeholder="Ну и отчество тоже"></label>
         </div>
         <div class="contest-request__travel-action">
@@ -116,7 +116,7 @@
         </div>
         <div class="contest-request__btns">
           <input class="contest-request__btn btn btn--green" type="submit" name="request" value="Отправить форму">
-          <span class="contest-request__note"><span class="contest-request__star">*</span> &mdash; Обязательные поля</span>
+          <span class="contest-request__note"><span class="contest-request__star">*</span> &mdash; Обязательные <span class="contest-request__note-expand">для заполнения</span> поля</span>
         </div>
         <div class="popup">
           <div class="popup__message popup__message--failure">
@@ -139,7 +139,7 @@
     <footer class="main-footer">
       <div class="main-footer__wrapper">
         <a class="main-footer__item logo logo--footer" href="index.html">
-          <svg class="logo__image logo__image--footer">
+          <svg class="logo__image logo__image--footer" width="146" height="40">
             <use xlink:href="#logo-pink-blue"></use>
           </svg>
           Pink
@@ -154,14 +154,13 @@
         <div class="main-footer__item copyright">
           <span>Разработано</span>
           <a class="copyright__link" href="https://htmlacademy.ru">
-            <svg>
+            <svg width="27" height="34">
               <use xlink:href="#logo-htmlacademy"></use>
             </svg>
           </a>
         </div>
       </div>
     </footer>
-    <script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
