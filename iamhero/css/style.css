@@ -924,7 +924,7 @@ textarea {
       width: 27px;
       height: 33px;
       transform: translate(-50%, -50%);
-      background-image: url(/images/communication_sprite.png);
+      background-image: url("../images/communication_sprite.png");
       background-repeat: no-repeat; }
     .communication__item_video::before {
       width: 28px;
