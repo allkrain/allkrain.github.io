@@ -619,7 +619,31 @@ textarea {
       flex-grow: 1;
   box-sizing: border-box; }
   .main-menu__burger {
-    display: none; }
+    position: relative;
+    display: none;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 35px;
+    height: 30px; }
+  .main-menu__burger-item {
+    display: block;
+    width: 35px;
+    height: 2px;
+    background-color: #fff; }
+    .main-menu__burger-item::before, .main-menu__burger-item::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      width: 35px;
+      height: 2px;
+      background-color: #fff; }
+    .main-menu__burger-item::before {
+      top: 0; }
+    .main-menu__burger-item::after {
+      bottom: 0; }
   .main-menu__list {
     box-sizing: border-box;
     padding-left: 28px;
@@ -673,7 +697,20 @@ textarea {
   -ms-flex-align: start;
       align-items: flex-start; }
   .user-menu__toggle {
-    display: none; }
+    display: none;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 0; }
+  .user-menu__icon {
+    width: 50px;
+    height: 50px;
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 2px; }
   .user-menu__list {
     box-sizing: border-box;
     display: -ms-flexbox;
@@ -1181,9 +1218,12 @@ textarea {
     .pricing__table_special .pricing__header h3 {
       color: #25ffc4; }
   .pricing__header {
+    box-sizing: border-box;
     padding: 24px 40px 0;
     width: 100%; }
     .pricing__header h3 {
+      box-sizing: border-box;
+      width: 100%;
       font-weight: 700;
       text-align: left;
       color: #374851; }
@@ -1270,6 +1310,8 @@ textarea {
       font-weight: inherit;
       color: inherit;
       letter-spacing: inherit; }
+  .pricing__btn {
+    box-sizing: border-box; }
 
 .note {
   font-family: "Museo Sans", "Arial", sans-serif;
@@ -1297,13 +1339,14 @@ textarea {
     text-align: right;
     font-size: 37px;
     font-weight: 100;
-    line-height: 1.2em;
+    line-height: inherit;
     color: #25ffc4;
-    vertical-align: text-top; }
+    vertical-align: middle; }
 
 .form {
   width: 100%; }
   .form__container {
+    box-sizing: border-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: column;
@@ -1448,6 +1491,7 @@ textarea {
         color: #3b4e63;
         border-bottom: none; }
   .switch__label {
+    letter-spacing: -0.8px;
     box-sizing: border-box;
     font-size: 20px;
     font-weight: 500;
@@ -1584,6 +1628,7 @@ textarea {
 
   .container {
     padding-left: 0;
+    padding-right: 0;
     width: 1340px; }
 
   .text-block_start .text-block__title_mainpage {
@@ -1613,10 +1658,13 @@ textarea {
     padding-right: 0; }
 
   .form_prereg .form__content::before {
-    left: calc(-100% - 10px); }
+    left: calc(-100% - 20px); }
 
   .form_prereg .form__radiofield {
-    width: 285px; } }
+    width: 285px; }
+
+  .socials {
+    min-width: 320px; } }
     @media (max-width: 1380px) {
 
   .container {
@@ -1630,11 +1678,25 @@ textarea {
     padding-right: 10%; }
 
   .pricing {
-    margin-bottom: 60px; } }
+    margin-bottom: 60px; }
+
+  .pricing__container {
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+    -ms-flex-pack: justify !important;
+    justify-content: space-between !important; }
+
+  .pricing__btn {
+    padding-left: 24px;
+    padding-right: 24px; } }
     @media (max-width: 1279px) {
 
   .container {
     width: 960px; }
+
+  .logo_footer {
+    margin-left: auto;
+    margin-right: auto; }
 
   .logo_lead {
     width: 165px;
@@ -1728,25 +1790,37 @@ textarea {
     margin-bottom: 50px;
     width: 100%; }
 
+  .form_prereg .form__inputlabel,
+        .form_prereg .form__radiofield {
+    margin-bottom: 26px; }
+
   .form_prereg .form__submit {
-    width: 100%; }
+    width: 50%; }
 
   .page-footer__container {
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -ms-flex-align: start;
-    align-items: flex-start; }
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+    align-content: flex-start; }
 
   .page-footer__logo {
-    margin: 0;
-    -ms-flex-item-align: center;
-    -ms-grid-row-align: center;
-    align-self: center; }
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 28px; }
+
+  .page-footer__menu {
+    width: 50%;
+    margin-right: 0;
+    margin-bottom: 40px; }
 
   .page-footer__menu_social {
-    margin-left: 0; } }
+    margin-left: 0;
+    margin-right: 0; }
+
+  .socials {
+    min-width: 0px; } }
     @media (max-width: 1024px) {
 
   .container {
@@ -1754,6 +1828,10 @@ textarea {
 
   .text-block__content p {
     padding: 0; }
+
+  .logo_footer {
+    margin-left: 0;
+    margin-right: 0; }
 
   .logo_header {
     width: 96px;
@@ -1853,6 +1931,31 @@ textarea {
     right: 8%;
     transform: none; }
 
+  .main-menu__burger {
+    width: 30px;
+    height: 26px; }
+
+  .main-menu__burger-item::before, .main-menu__burger-item::after {
+    width: 30px; }
+
+  .main-menu__burger-item {
+    width: 30px; }
+
+  .user-menu__icon {
+    width: 40px;
+    height: 40px; }
+
+  .crowdfunding__text {
+    width: 100%;
+    padding-top: 94px;
+    padding-left: 16px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    text-align: left; }
+
+  .pricing {
+    margin-bottom: 40px; }
+
   .pricing__container {
     -ms-flex-direction: column;
     flex-direction: column;
@@ -1862,20 +1965,133 @@ textarea {
     margin-top: 0; }
 
   .pricing__table {
+    margin-bottom: 2px;
     width: 100%; }
 
+  .pricing__table_special {
+    margin-bottom: 18px; }
+
+  .pricing__header h3 {
+    letter-spacing: -0.96px;
+    font-size: 24px; }
+
+  .pricing__table_regular .pricing__cell_price {
+    text-align: right; }
+
   .note__text {
-    width: 100%; }
+    width: 100%;
+    text-align: left; }
+
+  .note__star {
+    text-align: left; }
+
+  .form__text {
+    margin-bottom: 20px; }
+
+  .form_prereg .form__container {
+    padding-top: 44px;
+    padding-bottom: 66px;
+    padding-left: 26px;
+    padding-right: 26px;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center; }
 
   .form_prereg .form__text {
     padding-top: 0;
     -ms-flex-pack: center;
     justify-content: center;
-    text-align: center; } }
+    text-align: center; }
+
+  .form_prereg .form__submit {
+    width: 100%; }
+
+  .page-footer__container {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start; }
+
+  .page-footer__container {
+    padding-top: 14px;
+    padding-bottom: 16px; }
+
+  .page-footer__container {
+    padding-left: 15px;
+    padding-right: 15px; }
+
+  .page-footer__logo {
+    width: auto;
+    margin: 0;
+    -ms-flex-item-align: center;
+    -ms-grid-row-align: center;
+    align-self: center; }
+
+  .page-footer__logo {
+    margin-bottom: 28px; }
+
+  .page-footer__menu {
+    width: auto;
+    margin-right: 0; }
+
+  .page-footer__menu_info {
+    margin-bottom: 60px; }
+
+  .page-footer__menu_employer {
+    margin-bottom: 40px; }
+
+  .page-footer__menu_hero {
+    margin-bottom: 58px; }
+
+  .page-footer__menu_social {
+    margin-left: 0; }
+
+  .page-footer__menu_social .footer-menu__title {
+    margin-left: 0; }
+
+  .socials {
+    margin-top: 16px; }
+
+  .socials__item {
+    margin-right: 25px; }
+
+  .social {
+    width: 46px;
+    height: 46px; }
+
+  .social__img_facebook {
+    width: 12px;
+    height: 24px; }
+
+  .social__img_twitter {
+    width: 26px;
+    height: 20px; }
+
+  .social__img_instagram {
+    width: 20px;
+    height: 20px; }
+
+  .social__img_youtube {
+    width: 22px;
+    height: 15px; } }
     @media (max-width: 639px) {
 
   .container {
     width: 290px; }
+
+  h4 {
+    letter-spacing: -0.8px;
+    font-size: 20px; }
+
+  select,
+    input,
+    textarea {
+    letter-spacing: -0.56px;
+    font-size: 14px;
+    padding: 10px 16px; }
 
   .btn {
     font-size: 15px;
@@ -1899,6 +2115,10 @@ textarea {
     letter-spacing: -0.88px;
     font-size: 22px; }
 
+  .logo_footer {
+    width: 70px;
+    height: 46px; }
+
   .logo_lead {
     width: 82px;
     height: 58px; }
@@ -1906,6 +2126,10 @@ textarea {
   .logo_header {
     width: 48px;
     height: 34px; }
+
+  .logo__img_footer {
+    width: 66px;
+    height: 46px; }
 
   .logo__img_header {
     width: 48px;
@@ -1951,5 +2175,88 @@ textarea {
   .lead__logo {
     top: 24px; }
 
-  .socials__item {
-    margin-right: 20px; } }
+  .main-menu__burger {
+    width: 18px;
+    height: 14px; }
+
+  .main-menu__burger-item::before, .main-menu__burger-item::after {
+    width: 18px; }
+
+  .main-menu__burger-item {
+    width: 18px; }
+
+  .user-menu__icon {
+    width: 22px;
+    height: 22px; }
+
+  .crowdfunding {
+    min-height: 358px; }
+
+  .pricing__container {
+    width: 100%;
+    margin: 0; }
+
+  .pricing__header {
+    padding: 36px 9% 0; }
+
+  .pricing__body {
+    padding-left: 9%;
+    padding-right: 9%;
+    padding-bottom: 30px; }
+
+  .pricing__table_special .pricing__body {
+    padding-right: 10%;
+    padding-bottom: 34px; }
+
+  .pricing__cell {
+    letter-spacing: -0.56px;
+    font-size: 14px;
+    padding-top: 20px;
+    min-height: 25px; }
+
+  .pricing__table_special .pricing__cell {
+    padding-top: 34px; }
+
+  .pricing__footer {
+    letter-spacing: -0.52px;
+    padding: 12px 9%;
+    font-size: 13px; }
+
+  .pricing__btn {
+    letter-spacing: -0.48px;
+    padding: 9px 24px;
+    width: 100%;
+    font-size: 12px; }
+
+  .note {
+    padding: 0 10%; }
+
+  .note__text {
+    font-size: 14px; }
+
+  .note__star {
+    letter-spacing: -1px;
+    margin-right: 0;
+    font-size: 25px; }
+
+  .form__text .text-block__title_mainpage {
+    margin-bottom: 10px; }
+
+  .form__text .text-block__content p {
+    padding: 0 30px;
+    margin-bottom: 10px; }
+
+  .form_prereg .form__content::before {
+    top: 13px; }
+
+  .switch {
+    padding: 3px; }
+
+  .switch__label {
+    letter-spacing: -0.56px;
+    font-size: 14px; }
+
+  .footer-menu__item {
+    letter-spacing: -0.68px;
+    margin-bottom: 0;
+    font-size: 17px; } }
